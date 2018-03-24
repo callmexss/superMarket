@@ -2,11 +2,11 @@ import os
 
 
 def get_specific_file(filetype=""):
-    return [x for x in os.listdir() if x.endswith(filetype)]
+    return [x for x in os.listdir() if x.endswith(filetype.lower()) or x.endswith(filetype.upper())]
 
 
 def get_specific_file_count(filetype=""):
-    return len(get_specific_file(filetype))
+    return len(get_specific_file(filetype.lower()))
 
 
 def create_a_file(filename):
@@ -20,6 +20,7 @@ def gen_specific_file(filetype, n):
 
 
 def delete_specific_file(filetype):
+    assert(filetype.lower() != 'py')
     print("warning!!! This operation will delete all the {} files in current directory".format(filetype))
     choose = input("Are you sure you want to delete all the files? (y/n) ")
     if (choose.lower() == 'y'):
@@ -36,7 +37,7 @@ def delete_file_less_than(size, filetype="JPG"):
 # test
 def test():
     create_a_file("test.txt")
-    gen_specific_file("txt", 10)
+    gen_specific_file("JPG", 100)
     count = get_specific_file_count("txt")
     print(count)
     delete_specific_file("txt")
