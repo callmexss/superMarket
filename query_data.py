@@ -9,7 +9,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""
 
 
-with open("视觉新增商品.txt", "r") as f:
+with open("balabala.txt", "r") as f:
     li = f.readlines()
 
 data = {}
