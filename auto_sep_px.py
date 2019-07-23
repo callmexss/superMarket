@@ -9,13 +9,15 @@ pic_dir = "pic"
 xml_dir = "xml"
 
 try:
-  os.mkdir(pic_dir)
-  os.mkdir(xml_dir)
+    os.mkdir(pic_dir)
+    os.mkdir(xml_dir)
 except:
-  print("folders already exist.")
+    print("folders already exist.")
 
 for pic in pic_files:
-  os.rename(pic, os.path.join(pic_dir, pic))
+    os.rename(pic, os.path.join(pic_dir, pic))
 
 for xml in xml_files:
-  os.rename(xml, os.path.join(xml_dir, xml))
+    os.rename(xml, os.path.join(xml_dir, xml))
+
+print("operation finished.")
